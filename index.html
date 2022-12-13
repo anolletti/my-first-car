@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="My First Car Teaching App" />
+    <meta
+      property="og:description"
+      content="Teach car loans, amortization, down payments, interest, inflation, and new vs. used cars."
+    />
+    <meta property="og:image" content="images/site_preview.png" />
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+    ></script>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link href="styles.css" rel="stylesheet" />
+
+    <title>My First Car</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/083c33e49e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-xs-2 px-md-0">
+      <div class="container-fluid navbar2">
+        <a class="navbar-brand brand pe-4" href="#">
+          <i class="fa-solid fa-car pe-1"></i>
+          <span lang="en">MY FIRST CAR </span>
+          <span lang="fr">MA PREMIÈRE AUTO</span></a
+        >
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span lang="en">Resources</span
+                ><span lang="fr">Ressources</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="resources/student_activity.docx"
+                    ><span lang="en">for students</span
+                    ><span lang="fr">pour les élèves</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    data-bs-toggle="modal"
+                    data-bs-target="#teacherModal"
+                    ><span lang="en">for teachers</span
+                    ><span lang="fr">pour les enseignants</span></a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="mailto:anthonynolletti@gmail.com"
+                tabindex="-1"
+                aria-disabled="true"
+                ><span lang="en">Contact</span
+                ><span lang="fr">Contactez-moi</span></a
+              >
+            </li>
+          </ul>
+          <form class="d-flex">
+            <button
+              type="button"
+              class="btn btn-outline-light m-1"
+              id="languageButton"
+            ></button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MODALS -->
+
+    <!-- Modal -->
+
+    <div
+      class="modal fade"
+      id="teacherModal"
+      tabindex="-1"
+      aria-labelledby="teacherModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="teacherModalLabel">
+              <span lang="en">Pedagogical Information</span>
+              <span lang="fr">Information pédagogique</span>
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body modal-text">
+            <dl class="row">
+              <h4>Information</h4>
+              <br />
+              <br />
+              <dt class="col-sm-3">Description</dt>
+              <dd class="col-sm-9">
+                <span lang="en"
+                  >Teaching application to show compound interest and
+                  amortization calculation strategies and applications.
+                </span>
+                <span lang="fr"
+                  >Application pédagogique permettant de montrer les stratégies
+                  et les applications du calcul des intérêts simples et
+                  l'amortisation.
+                </span>
+              </dd>
+              <dt class="col-sm-3">GMF 10</dt>
+              <dd class="col-sm-9">
+                <span lang="en"
+                  >Demonstrate an understanding of simple and compound interest
+                  (N4)
+                </span>
+                <span lang="fr"
+                  >Démontrer une compréhension des intérêts simples et composés
+                  (N4) <br />
+                </span>
+              </dd>
+              <dt class="col-sm-3">WFM 11</dt>
+              <dd class="col-sm-9">
+                <span lang="en"
+                  >Solve problems that require the manipulation and application
+                  of formulas (A1)</span
+                >
+                <span lang="fr"
+                  >Résoudre des problèmes qui exigent la manipulation et
+                  l'application de formules (A1)</span
+                >
+              </dd>
+
+              <dt class="col-sm-3">
+                <span lang="en">Vocabulary</span
+                ><span lang="fr">Vocabulaire</span>
+              </dt>
+              <dd class="col-sm-9">
+                <span lang="en">
+                  Compound Interest, Principal, Interest, Term, Compound
+                  Periods, Down payment
+                </span>
+                <span lang="fr">
+                  Intérêts composés, Capital, Intérêt, Terme, Périodes de calcul
+                  de l'intérêt, Mise de fonds
+                </span>
+              </dd>
+              <dt class="col-sm-3">
+                <span lang="en">Activities</span
+                ><span lang="fr">Activités</span>
+              </dt>
+              <dd class="col-sm-9">
+                <span lang="en">
+                  Student reflection activity under "Student Resources"
+                </span>
+                <span lang="fr"> Activité de réflexion des élèves </span>
+              </dd>
+            </dl>
+            <br />
+            <h4>
+              <span lang="en">Lesson Plan</span
+              ><span lang="fr">Plan pédagogique</span>
+            </h4>
+            <br />
+            <h5>
+              <span lang="en">Getting Started (20 minutes)</span
+              ><span lang="fr">Activation des connaissances préalables </span>
+            </h5>
+            <p lang="en">
+              Think-Pair-Share: What are the advantages of purchasing a new car?
+              A used car? Have students discuss their answers in pair and with
+              the class. Visually display the list on whiteboard.
+            </p>
+            <p lang="fr">
+              Pense-Parle-Partage: Quels sont les avantages d'acheter une
+              voiture neuve ? Une voiture usagée ? Demandez aux élèves de
+              discuter de leurs réponses en binôme et avec la classe. Affichez
+              visuellement la liste au tableau blanc.
+            </p>
+            <h5>
+              <span lang="en">Working on It</span
+              ><span lang="fr">Travaillons</span>
+            </h5>
+            <ol>
+              <li>
+                <p lang="en">
+                  Provide students a tour of the application. Show students how
+                  to use tooltips (hover mouse over question mark symbol) for
+                  vocabulary support. Show students the interest pie chart,
+                  graph of loan payment, amortization formula and table of
+                  values.
+                </p>
+                <p lang="fr">
+                  Faites visiter l'application aux élèves. Montrez aux élèves
+                  comment l'utilisation des infobulles (survol de la souris sur
+                  le symbole du point d'interrogation) pour le vocabulaire.
+                  Montrez aux élèves le camembert des intérêts, le graphique des
+                  paiement du prêt, la formule d'amortissement et le tableau des
+                  valeurs.
+                </p>
+              </li>
+              <li>
+                <p lang="en">
+                  Explain expectations and instructions for the student
+                  assignment.
+                </p>
+                <p lang="en">
+                  (a) New Car: it would be useful to show tools on determining
+                  new car prices by visiting dealership websites. Here, finance
+                  rates and car prices (with tax) can be researched.
+                </p>
+                <p lang="fr">
+                  Expliquez les attentes et les instructions pour l'activité de
+                  l'élève.
+                </p>
+                <p lang="fr">
+                  (a) Voiture neuve : il serait utile de montrer des outils
+                  permettant de déterminer les prix des voitures neuves en
+                  visitant les sites Web des concessionnaires. Ici, les taux de
+                  financement et les prix des voitures (avec les taxes) peuvent
+                  être recherchés.
+                </p>
+                <p lang="en">
+                  (b) Used Car: model to students how to find a used car price
+                  using a service such as Kijiji or Facebook Marketplace. Show
+                  how to add taxes on the vehicle by using a Black Book website,
+                  such as
+                  <a href="https://estimator.canadianblackbook.com/"
+                    >Canadian Blackbook</a
+                  >. Taxes are calculated by calculating the taxes on the
+                  blackbook price, and adding them to the sale price of the used
+                  vehicle. Teacher may need to provide used car interest rates.
+                </p>
+                <p lang="fr">
+                  (b) Voiture usagée : montrez aux élèves comment trouver le
+                  prix d'une voiture d'occasion en utilisant un service tel que
+                  Kijiji ou Facebook Marketplace. Montrez comment ajouter les
+                  taxes sur le véhicule en utilisant un site web Black Book, tel
+                  que
+                  <a href="https://estimator.canadianblackbook.com/"
+                    >Canadian Blackbook</a
+                  >. Les taxes sont calculées en calculant les taxes sur le prix
+                  du blackbook. et en les ajoutant au prix de vente du véhicule
+                  d'occasion. L'enseignant(e) pourrait fournir le taux d'intérêt
+                  des véhicules usagées pour les élèves.
+                </p>
+              </li>
+              <li>
+                <p lang="en">Students are now ready to complete assignment.</p>
+                <p lang="fr">
+                  Les élèves ont maintenant tous les directifs nécaissaires pour
+                  compléter leur devoir.
+                </p>
+              </li>
+            </ol>
+            <h5>
+              <span lang="en">Consolidate</span
+              ><span lang="fr">Consolidation</span>
+            </h5>
+            <p lang="en">
+              Discuss student reflections, particularly how the activity will
+              guide the purchase of their first vehicle.
+            </p>
+            <p lang="fr">
+              Discutez des réflexions des élèves, en particulier de la façon
+              dont l'activité guidera l'achat de leur premier véhicule.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- End of Modals -->
+    <div class="container pt-xs-2 pt-lg-4">
+      <div
+        class="row d-flex flex-row justify-content-center align-items-center"
+      >
+        <div
+          class="col-xs-12 col-lg-4 bevel d-flex flex-column justify-content-center"
+        >
+          <!-- Principal -->
+          <div class="row p-2">
+            <label for="principalSlider" class="form-label"
+              ><span lang="en">Cost of Car (with tax) </span
+              ><span lang="fr">Coût d'auto (avec taxe) </span
+              ><i
+                class="fa-regular fa-circle-question fa-xs"
+                name="carCostPopover"
+              ></i
+            ></label>
+
+            <div class="col-7 d-flex align-items-center">
+              <input
+                class="form-range"
+                type="range"
+                min="0"
+                max="50000"
+                step="50"
+                value="25000"
+                oninput="principalFunction(this.value)"
+                id="principalSlider"
+                name="principalSlider"
+              />
+            </div>
+            <div class="col-4">
+              <input
+                type="text"
+                id="principalField"
+                class="form-control NumericInput"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                value="25000"
+              />
+            </div>
+          </div>
+
+          <!-- Downpayment -->
+          <div class="row p-2">
+            <label for="principalSlider" class="form-label"
+              ><span lang="en">Down payment </span
+              ><span lang="fr">Mise de fonds </span
+              ><i
+                class="fa-regular fa-circle-question fa-xs"
+                name="downpaymentPopover"
+              ></i
+            ></label>
+
+            <div class="col-7 d-flex align-items-center">
+              <input
+                class="form-range"
+                type="range"
+                min="0"
+                max="20000"
+                step="50"
+                value="5000"
+                oninput="downpaymentFunction(this.value)"
+                id="downpaymentSlider"
+                name="downpaymentSlider"
+              />
+            </div>
+            <div class="col-4">
+              <input
+                type="text"
+                id="downpaymentField"
+                class="form-control NumericInput"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                value="5000"
+              />
+            </div>
+          </div>
+
+          <!-- Interest -->
+          <div class="row p-2">
+            <label for="interestSlider" class="form-label"
+              ><span lang="en">Annual Interest </span
+              ><span lang="fr">Intérêt annuel </span
+              ><i
+                class="fa-regular fa-circle-question fa-xs"
+                name="interestPopover"
+              ></i
+            ></label>
+
+            <div
+              class="col-7 d-flex align-items-center d-flex align-items-center"
+            >
+              <input
+                class="form-range"
+                name="interestSlider"
+                type="range"
+                min="0"
+                max="20"
+                step="0.1"
+                value=""
+                oninput="interestFunction(this.value)"
+                id="interestSlider"
+              />
+            </div>
+            <div class="col-4">
+              <input
+                type="text"
+                id="interestField"
+                class="form-control NumericInput"
+                value="5.5%"
+              />
+            </div>
+          </div>
+
+          <!-- Term -->
+          <div class="row p-2">
+            <label for="timeSlider" class="form-label"
+              ><span lang="en">Term in Years </span>
+              <span lang="fr">Durée en années </span
+              ><i
+                class="fa-regular fa-circle-question fa-xs"
+                name="termPopover"
+              ></i
+            ></label>
+
+            <div
+              class="col-7 d-flex align-items-center d-flex align-items-center"
+            >
+              <input
+                class="form-range"
+                name="timeSlider"
+                type="range"
+                min="1"
+                max="8"
+                step="1"
+                value="5"
+                oninput="timeFunction(this.value)"
+                id="timeSlider"
+              />
+            </div>
+            <div class="col-4">
+              <input
+                type="text"
+                id="timeField"
+                class="form-control NumericInput"
+                value="5"
+                onkeyup="timeSlider.value = numOnly(this.value);
+              time = numOnly(this.value); calculate()"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              />
+            </div>
+          </div>
+
+          <!-- Compounded -->
+          <div class="pt-3">
+            <h4 class="text-center">
+              <span lang="en">Your monthly car payment is</span>
+              <span lang="fr">Votre paiement de voiture mensuel est </span>
+            </h4>
+            <div
+              class="d-flex flex-row text-center align-items-center justify-content-center"
+            >
+              <h2 id="amortizationTotal"></h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordians -->
+
+        <div class="col-xs-12 col-lg-7">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button
+                  class="accordion-button bg-dark"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="true"
+                  aria-controls="collapseFour"
+                >
+                  <i class="fa-solid fa-chart-pie accordion-text pe-3"></i>
+                  <span lang="en" class="accordion-text"
+                    >Interest Pie Chart</span
+                  >
+                  <span lang="fr" class="accordion-text"
+                    >Graphique circulaire des intérêts</span
+                  >
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingFour"
+                data-bs-parent="#accordionExample"
+              >
+                <div
+                  class="accordion-body d-flex flex-column align-items-center justify-content-center"
+                >
+                  <div class="col-xs-12 col-md-6">
+                    <h5 class="text-center p-2">
+                      <span lang="en">You will pay</span>
+                      <span lang="fr">En tout, vous paierez</span>
+                      <span name="totalPrice"></span>
+                      <span lang="en"
+                        >for your car, of which
+                        <span name="totalInterest"></span> is interest.</span
+                      >
+                      <span lang="fr"
+                        >dont <span name="totalInterest"></span> sont des frais
+                        d'intérêt.
+                      </span>
+                    </h5>
+
+                    <canvas id="pieElement"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button collapsed bg-dark"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="false"
+                  aria-controls="collapseOne"
+                >
+                  <i class="fa-solid fa-chart-column accordion-text pe-3"></i>
+                  <span lang="en" class="accordion-text"
+                    >Graph of Loan Payment</span
+                  >
+                  <span lang="fr" class="accordion-text"
+                    >Graphique de paiement du prêt</span
+                  >
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <!-- Graph -->
+                  <h5 class="pb-1 pt-1">
+                    <span lang="en">Life of your loan </span
+                    ><span lang="fr">Montant restant </span>
+                  </h5>
+                  <canvas id="interestElement"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button bg-dark collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  <i
+                    class="fa-solid fa-square-root-variable accordion-text pe-3"
+                  ></i>
+                  <span lang="en" class="accordion-text"
+                    >How to Calculate Payments</span
+                  >
+                  <span lang="fr" class="accordion-text"
+                    >Comment calculer les paiements</span
+                  >
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body accordion-body-text">
+                  <div id="calculations"></div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button collapsed bg-dark"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  <i class="fa-solid fa-table accordion-text pe-3"></i>
+                  <span lang="en" class="accordion-text">Table of Values</span>
+                  <span lang="fr" class="accordion-text"
+                    >La table de valeurs</span
+                  >
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <table
+                    class="table table-hover table-striped"
+                    id="tableOfValues"
+                  >
+                    <thead>
+                      <tr>
+                        <th scope="col">
+                          <span lang="en">Month</span
+                          ><span lang="fr">Mois</span>
+                        </th>
+                        <th scope="col">
+                          <span lang="en">Principal</span
+                          ><span lang="fr">Capital</span>
+                        </th>
+                        <th scope="col">
+                          <span lang="en">Interest</span
+                          ><span lang="fr">Intérêts</span>
+                        </th>
+                        <th scope="col">
+                          <span lang="en">Payment</span
+                          ><span lang="fr">Paiement</span>
+                        </th>
+                        <th scope="col">
+                          <span lang="en">New Principal</span
+                          ><span lang="fr">Capital final</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="py-2 my-2 mt-5 bg-white">
+      <ul class="nav justify-content-center border-bottom pb-3">
+        <li class="nav-item">
+          <a
+            class="nav-link px-2 text-muted"
+            data-bs-toggle="modal"
+            data-bs-target="#teacherModal"
+            lang="en"
+            >Teacher Resource</a
+          >
+          <a
+            class="nav-link px-2 text-muted"
+            data-bs-toggle="modal"
+            data-bs-target="#teacherModal"
+            lang="fr"
+            >Ressource pour enseignant</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link px-2 text-muted"
+            href="resources/student_activity.docx"
+            lang="en"
+            ><span lang="en">Student Exploration</span></a
+          >
+          <a
+            class="nav-link px-2 text-muted"
+            data-bs-toggle="modal"
+            data-bs-target="#teacherModal"
+            lang="fr"
+            ><span lang="fr">Activité</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="mailto:anthonynolletti@gmail.com"
+            class="nav-link px-2 text-muted"
+            ><span lang="en">Contact Me</span
+            ><span lang="fr">Contactez-moi</span></a
+          >
+        </li>
+      </ul>
+      <p class="text-center text-muted">© 2022 Anthony Nolletti</p>
+    </footer>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
