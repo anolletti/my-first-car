@@ -129,6 +129,8 @@ function calculation() {
   monthlyInterest = [];
   monthlyPrincipal = [];
   monthlyNewPrincipal = [];
+  monthlyAmortization = [];
+
   totalMonths = time * 12;
   totalInterest = 0;
 
