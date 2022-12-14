@@ -47,7 +47,7 @@ function principalFunction(val) {
   currencyFormatter();
 
   principalField.value = formatter.format(val);
-  principal = val;
+  principal = Number(val);
 
   if (Number(downpayment) > Number(principal)) {
     principalField.value = formatter.format(downpayment);
