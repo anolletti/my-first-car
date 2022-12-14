@@ -194,7 +194,7 @@ function calculation() {
       )}} $$  <br><br> Étape 3: Calculer la période d'amortissement en mois <br><br> 
   $$\\textrm{Nombre de mois (n)} = ${time}\\textrm{ ans} * 12 = ${
         time * 12
-      }\\textrm{ mois} $$ <br><br> Étape 4: Entrer les variables dans la formula <br><br> $$A = ${formatter.format(
+      }\\textrm{ mois} $$ <br><br> Étape 4: Entrer les variables dans la formule <br><br> $$A = ${formatter.format(
         principal
       )} { (1 + ${parseFloat(interestRate / 12).toFixed(
         5
