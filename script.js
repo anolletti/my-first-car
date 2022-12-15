@@ -633,7 +633,7 @@ function setPopoversFr() {
   createPopover(
     "carCostPopover",
     "Prix d'auto",
-    "Il faut multiplier le prix d'auto par 1.15 pour calculer la valeur d'un nouvel auto au N-B après taxe. Si on achète une ancienne véhicule, il faut se servir de la valeur 'Black Book' de l'auto et non le prix d'achat pour calculer les taxes."
+    "Il faut multiplier le coût de l'auto par 1.15 pour calculer la valeur d'une nouvelle auto au N-B après taxe. Si on achète une voiture d'occasion, il faut se servir de la valeur 'Black Book' de l'auto et non le prix d'achat pour calculer les taxes."
   );
 
   createPopover(
@@ -645,7 +645,7 @@ function setPopoversFr() {
   createPopover(
     "downpaymentPopover",
     "Mise de fonds",
-    "Le montant d'argent que vous versez au moment de l'achat (10-20 % est une recommandation."
+    "Le montant d'argent que vous versez au moment de l'achat (10-20 % est une recommandation)."
   );
 
   createPopover(
