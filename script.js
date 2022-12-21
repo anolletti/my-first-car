@@ -195,7 +195,7 @@ function calculation() {
   $$\\textrm{Nombre de mois (n)} = ${time}\\textrm{ ans} * 12 = ${
         time * 12
       }\\textrm{ mois} $$ <br><br> Étape 4: Entrer les variables dans la formule <br><br> $$A = ${formatter.format(
-        principal
+        principal - downpayment
       )} { (1 + ${parseFloat(interestRate / 12).toFixed(
         5
       )})^{${totalMonths}} \\over (1 + ${parseFloat(interestRate / 12).toFixed(
@@ -217,7 +217,7 @@ function calculation() {
   $$\\textrm{Number of months (n)} = ${time}\\textrm{ years} * 12 = ${
         time * 12
       }\\textrm{ months} $$ <br><br> Step 4: Input variables in formula <br><br> $$A = ${formatter.format(
-        principal
+        principal - downpayment
       )} { (1 + ${parseFloat(interestRate / 12).toFixed(
         5
       )})^{${totalMonths}} \\over (1 + ${parseFloat(interestRate / 12).toFixed(
